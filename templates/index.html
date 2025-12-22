@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SloGen AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="main-card">
+        <div class="header">
+            <h1>SloGen 🚀</h1>
+            <p>AI-Powered Marketing Slogans</p>
+        </div>
+        
+        <div class="input-group">
+            <label>Product Name</label>
+            <input type="text" id="productInput" placeholder="e.g., UltraPhone">
+            
+            <label>Keywords (Optional)</label>
+            <input type="text" id="keywordInput" placeholder="e.g., fast, secure, cheap">
+            
+            <div class="options-row">
+                <div class="select-group">
+                    <label>Tone / Style</label>
+                    <select id="toneInput">
+                        <option value="Creative">🎨 Creative</option>
+                        <option value="Professional">💼 Professional</option>
+                        <option value="Funny">😂 Funny</option>
+                        <option value="Minimalist">✨ Minimalist</option>
+                        <option value="Luxury">💎 Luxury</option>
+                    </select>
+                </div>
+
+                <div class="select-group">
+                    <label>Language</label>
+                    <select id="langInput">
+                        <option value="English">🇬🇧 English</option>
+                        <option value="Turkish">🇹🇷 Turkish</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button onclick="generateSlogan()">Generate Slogans</button>
+        </div>
+
+        <div class="output-area">
+            <div id="loading" class="hidden">🤖 AI is thinking...</div>
+            <ul id="resultList" class="slogan-list"></ul>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
