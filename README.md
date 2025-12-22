@@ -47,7 +47,7 @@ git clone https://github.com/YOUR_USERNAME/SloGen-AI.git
 cd SloGen-AI
 ```
 
-2️⃣ Create a Virtual Environment (Recommended)
+## 2️⃣ Create a Virtual Environment (Recommended)
 Windows
 
 ```bash
@@ -61,12 +61,12 @@ Kodu kopyala
 python3 -m venv venv
 source venv/bin/activate
 ```
-3️⃣ Install Dependencies
+## 3️⃣ Install Dependencies
 ```bash
 Kodu kopyala
 pip install -r requirements.txt
 ```
-4️⃣ Configure API Key 🔑
+## 4️⃣ Configure API Key 🔑
 ```bash
 Create a .env file in the project root directory and add:
 
@@ -76,7 +76,7 @@ GOOGLE_API_KEY=AIzaSyYourActualAPIKeyHere
 ⚠️ Do not use quotes around the key and do not commit .env to GitHub.
 ```
 
-5️⃣ Run the Application
+## 5️⃣ Run the Application
 ```bash
 python app.py
 ```
@@ -96,7 +96,7 @@ Language: Choose "Turkish" or "English".
 Click Generate!
 ```
 
-📂 Project Structure
+## 📂 Project Structure
 ```bash
 SloGen-AI/
 ├── static/
@@ -110,3 +110,4 @@ SloGen-AI/
 ├── .env                # API Keys (Excluded from Repo)
 └── README.md           # Documentation
 ```
+
