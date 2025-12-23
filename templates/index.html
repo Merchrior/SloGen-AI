@@ -3,53 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SloGen AI</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>SloGen AI - Cloud</title>
+    <link rel="stylesheet" href="/static/style.css"> 
 </head>
 <body>
-    <div class="main-card">
-        <div class="header">
-            <h1>SloGen 🚀</h1>
-            <p>AI-Powered Marketing Slogans</p>
-        </div>
-        
-        <div class="input-group">
-            <label>Product Name</label>
-            <input type="text" id="productInput" placeholder="e.g., UltraPhone">
-            
-            <label>Keywords (Optional)</label>
-            <input type="text" id="keywordInput" placeholder="e.g., fast, secure, cheap">
-            
-            <div class="options-row">
-                <div class="select-group">
-                    <label>Tone / Style</label>
-                    <select id="toneInput">
-                        <option value="Creative">🎨 Creative</option>
-                        <option value="Professional">💼 Professional</option>
-                        <option value="Funny">😂 Funny</option>
-                        <option value="Minimalist">✨ Minimalist</option>
-                        <option value="Luxury">💎 Luxury</option>
-                    </select>
-                </div>
-
-                <div class="select-group">
-                    <label>Language</label>
-                    <select id="langInput">
-                        <option value="English">🇬🇧 English</option>
-                        <option value="Turkish">🇹🇷 Turkish</option>
-                    </select>
-                </div>
+    <div class="main-container">
+        <div class="main-card">
+            <div class="header">
+                <h1>SloGen AI ☁️</h1>
+                <p>Powered by Google Gemini API</p>
             </div>
             
-            <button onclick="generateSlogan()">Generate Slogans</button>
+            <div class="input-group">
+                <label>Ürün / Marka Adı</label>
+                <input type="text" id="productInput" placeholder="Örn: Uzay Kahvesi">
+                
+                <label>Anahtar Kelimeler (Opsiyonel)</label>
+                <input type="text" id="keywordInput" placeholder="Örn: hızlı, ucuz, lezzetli">
+                
+                <div class="options-row">
+                    <div class="select-group">
+                        <label>Ton / Tarz</label>
+                        <select id="toneInput">
+                            <option value="Creative">🎨 Yaratıcı</option>
+                            <option value="Professional">💼 Profesyonel</option>
+                            <option value="Funny">😂 Komik</option>
+                            <option value="Minimalist">✨ Minimalist</option>
+                            <option value="Luxury">💎 Lüks</option>
+                        </select>
+                    </div>
+
+                    <div class="select-group">
+                        <label>Dil</label>
+                        <select id="langInput">
+                            <option value="Turkish">🇹🇷 Türkçe</option>
+                            <option value="English">🇬🇧 English</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button class="generate-btn" onclick="generateSlogan()">Slogan Üret</button>
+            </div>
+
+            <div class="output-area">
+                <div id="loading" class="hidden" style="color:#fff;">⚡ Google'a soruluyor...</div>
+                <ul id="resultList" class="slogan-list"></ul>
+            </div>
         </div>
 
-        <div class="output-area">
-            <div id="loading" class="hidden">🤖 AI is thinking...</div>
-            <ul id="resultList" class="slogan-list"></ul>
+        <div class="history-card">
+            <div class="history-header">
+                <h3>📜 Geçmiş Aramalar</h3>
+                <button onclick="clearHistory()" class="clear-btn">Temizle</button>
+            </div>
+            <div id="historyList" class="history-content">
+                </div>
         </div>
     </div>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="/static/script.js"></script>
 </body>
 </html>

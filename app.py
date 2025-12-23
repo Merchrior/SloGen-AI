@@ -13,19 +13,22 @@ def generate():
     
     # Frontend'den gelen verileri al
     product = data.get('product')
-    tags = data.get('keywords')
-    tone = data.get('tone', 'Creative')      # Varsayılan: Creative
-    language = data.get('language', 'English') # Varsayılan: English
+    keywords = data.get('keywords', '')
+    tone = data.get('tone', 'Creative')
+    language = data.get('language', 'Turkish')
 
     if not product:
-        return jsonify({'error': 'Product name is required'}), 400
+        return jsonify({'error': 'Ürün adı gerekli!'}), 400
 
     try:
-        # 4 parametreyi de fonksiyona gönder
-        slogan_list = generate_slogan(product, tags, tone, language)
+        # API Motorunu Çalıştır
+        slogan_list = generate_slogan(product, keywords, tone, language)
+        
+        # Sonucu JSON olarak döndür
         return jsonify({'slogan': slogan_list})
+        
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5000)
