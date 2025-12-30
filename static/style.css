@@ -17,17 +17,17 @@ body {
     padding: 20px;
 }
 
-/* YAN YANA DURMALARI İÇİN KAPLAYICI */
+
 .main-container {
     display: flex;
     gap: 20px;
     width: 100%;
     max-width: 900px;
     align-items: flex-start;
-    flex-wrap: wrap; /* Mobilde alt alta geçsin */
+    flex-wrap: wrap; /* for mobile */
 }
 
-/* ANA KART (SLOGAN GENERATOR) */
+/* SLOGAN GENERATOR */
 .main-card {
     flex: 2; /* Daha geniş alan */
     background: rgba(255, 255, 255, 0.1);
@@ -39,20 +39,20 @@ body {
     min-width: 300px;
 }
 
-/* GEÇMİŞ KARTI */
+/* history card */
 .history-card {
-    flex: 1; /* Daha dar alan */
+    flex: 1; 
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     padding: 1.5rem;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    height: 500px; /* Sabit yükseklik */
-    overflow-y: auto; /* Kaydırma çubuğu */
+    height: 500px; /* fixed length */
+    overflow-y: auto; /* slider */
     min-width: 250px;
 }
 
-/* KAYDIRMA ÇUBUĞU TASARIMI */
+/* slider design */
 .history-card::-webkit-scrollbar { width: 5px; }
 .history-card::-webkit-scrollbar-thumb { background: #8e2de2; border-radius: 10px; }
 
