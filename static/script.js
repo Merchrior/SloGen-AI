@@ -34,10 +34,10 @@ async function generateSlogan() {
         loading.classList.add('hidden');
         
         if (data.slogan && Array.isArray(data.slogan)) {
-            // 1. Ekrana Bas
+            // 1. press the screen
             renderSlogans(data.slogan, resultList);
             
-            // 2. GEÇMİŞE KAYDET
+            // 2. save to history
             addToHistory(product, tone, data.slogan);
         } else {
             resultList.innerHTML = "<li style='color:red; text-align:center'>Slogan üretilemedi.</li>";
@@ -50,7 +50,7 @@ async function generateSlogan() {
     }
 }
 
-// Sloganları listeye dökme fonksiyonu (Tekrar tekrar yazmayalım diye ayırdım)
+//
 function renderSlogans(slogans, container) {
     slogans.forEach(text => {
         const li = document.createElement('li');
@@ -72,13 +72,13 @@ function renderSlogans(slogans, container) {
     });
 }
 
-/* --- GEÇMİŞ YÖNETİMİ --- */
+
 
 function addToHistory(product, tone, slogans) {
-    // Mevcut geçmişi al veya boş liste oluştur
+    // create empty list
     let history = JSON.parse(localStorage.getItem('slogen_history')) || [];
     
-    // Yeni kaydı oluştur
+    // create new save
     const newEntry = {
         id: Date.now(),
         product: product,
@@ -90,10 +90,10 @@ function addToHistory(product, tone, slogans) {
     // En başa ekle
     history.unshift(newEntry);
     
-    // Maksimum 10 kayıt tutalım (Hafıza dolmasın)
+    // max 10 history
     if (history.length > 10) history.pop();
     
-    // Kaydet ve ekranı güncelle
+    // save and update screen
     localStorage.setItem('slogen_history', JSON.stringify(history));
     loadHistory();
 }
@@ -120,7 +120,7 @@ function loadHistory() {
             <div class="hist-preview">"${item.slogans[0]}"</div>
         `;
         
-        // Tıklayınca o geçmişteki sloganları tekrar ana ekrana getir
+        // click to retrieve history
         div.onclick = () => {
             const resultList = document.getElementById('resultList');
             resultList.innerHTML = "";
